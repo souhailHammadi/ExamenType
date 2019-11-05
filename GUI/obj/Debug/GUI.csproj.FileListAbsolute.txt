@@ -1,0 +1,86 @@
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\GUI.exe.config
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\GUI.exe
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\GUI.pdb
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\Domaine.dll
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\EntityFramework.dll
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\Service.Pattern.dll
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\Services.dll
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\Data.dll
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\Domaine.pdb
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\Service.Pattern.pdb
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\Services.pdb
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\EntityFramework.xml
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\Data.pdb
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\fr\EntityFramework.resources.dll
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\obj\Debug\GUI.exe
+c:\users\bouyo\documents\visual studio 2015\Projects\Examen\GUI\obj\Debug\GUI.pdb
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\GUI.exe.config
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\GUI.exe
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\GUI.pdb
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\Domaine.dll
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\EntityFramework.dll
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\Service.Pattern.dll
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\Services.dll
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\Data.dll
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\Domaine.pdb
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\Service.Pattern.pdb
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\Services.pdb
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\EntityFramework.xml
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\Data.pdb
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\obj\Debug\GUI.exe
+C:\Users\foura\Desktop\PI-DEV\ExamenType\GUI\obj\Debug\GUI.pdb
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\GUI.exe.config
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\GUI.exe
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\GUI.pdb
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\Domaine.dll
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\EntityFramework.dll
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\Service.Pattern.dll
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\Services.dll
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\Data.dll
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\Domaine.pdb
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\Service.Pattern.pdb
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\Services.pdb
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\EntityFramework.xml
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\Data.pdb
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\obj\Debug\GUI.exe
+C:\Users\infoMix\Desktop\PIDEV\ExamenType\GUI\obj\Debug\GUI.pdb
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\GUI.exe.config
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\GUI.exe
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\GUI.pdb
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Domaine.dll
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\EntityFramework.dll
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\EntityFramework.SqlServer.dll
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Service.Pattern.dll
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Services.dll
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Data.dll
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Domaine.pdb
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Domaine.dll.config
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Service.Pattern.pdb
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Service.Pattern.dll.config
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Services.pdb
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Services.dll.config
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\EntityFramework.xml
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\EntityFramework.SqlServer.xml
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Data.pdb
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\Data.dll.config
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\fr\EntityFramework.resources.dll
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\obj\Debug\GUI.csproj.CopyComplete
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\obj\Debug\GUI.exe
+D:\4ERP-BI1\PIDEV\ExamenType\GUI\obj\Debug\GUI.pdb
