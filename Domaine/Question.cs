@@ -1,7 +1,5 @@
-﻿using Domaine;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,14 +8,13 @@ namespace Domaine
 {
     public class Question
     {
-        public int QuestionId { get; set; }
-        public String Questions { get; set; }
-        
-        //public int? EntretienEnLigneId { get; set; }
-        public virtual EntretienEnLigne EntretienEnLigne { get; set; }
-        public ICollection<Choix> ListeChoix { get; set; }
-        public ICollection<Reponse> ListeReponse { get; set; }
 
-
+        public Question()
+        {
+            Answers = new HashSet<Answer>();
+        }
+        public int QuestionID { get; set; }
+        public String Content { get; set; }
+        public virtual ICollection<Answer> Answers { get; set; }
     }
 }

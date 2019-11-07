@@ -14,6 +14,6 @@ namespace Domaine
 
         //foreign Key properties      
         
-        public ICollection<Question> ListeQuestions { get; set; }
+       
     }
 }

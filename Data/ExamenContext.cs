@@ -1,7 +1,9 @@
-﻿using Domaine;
+﻿using Data.MyConfigurations;
+using Domaine;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,13 +27,17 @@ namespace Data
         public DbSet<EntretienEnLigne> EntretienEnLigne { get; set; }
         public DbSet<EntretienPhysique> EntretienPhysique { get; set; }
         public DbSet<Post> Post { get; set; }
-        public DbSet<Question> Question { get; set; }
+   
         public DbSet<ReactComment> ReactComment { get; set; }
         public DbSet<ReactPost> ReactPost { get; set; }
-        public DbSet<Reponse> Reponse { get; set; }
-        public DbSet<Choix> Choix { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
 
-
-
+      /*  protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
+            modelBuilder.Configurations.Add(new QuestionConfiguration());
+            modelBuilder.Configurations.Add(new AnswerConfiguration());
+        }*/
     }
 }

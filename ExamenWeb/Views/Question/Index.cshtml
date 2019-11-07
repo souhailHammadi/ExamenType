@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Quiz</h3>
+    <form asp-controller="Question" asp-action="Submit">
+        <ol>
+            @foreach (var question in ViewBag.Questions)
+            {
+                <li>
+                    @question.Content
+                    <input type="hidden" name="questionId" value="@question.QuestionID" />
+                    <ol>
+                        @foreach (var answer in question.Answers)
+                        {
+                            <li>
+                                <input type="radio" name="question_@answer.QuestionID" value="@answer.AnswerID" />
+                                @answer.Content
+                            </li>
+                        }
+                    </ol>
+                </li>
+            }
+
+        </ol>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+
+</html>
