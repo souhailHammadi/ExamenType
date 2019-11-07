@@ -32,6 +32,10 @@ namespace Domaine
         public int? UserId { get; set; }
 
 
+        [ForeignKey("PostId")]
+        public virtual Post Post { get; set; }
+        public int? PostId { get; set; }
+
         public virtual ICollection<ReactComment> ListReacC { get; set; }
 
     }

@@ -1,0 +1,423 @@
+﻿
+@model ExamenWeb.Models.Multi
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<h2>Forum</h2>
+
+
+
+@using (Html.BeginForm("Create", "Post", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Contenu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Contenu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Contenu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+      
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group" style="display:none;width:1px">
+            @Html.TextBox("UserId", 1, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="col-md-10" style="display:none;width:1px">
+            @Html.TextBox("Vue", 0, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="form-group" style="display:none;width:1px">
+           
+                @Html.TextBox("DatePost", DateTime.Now, new { htmlAttributes = new { @class = "form-control" } })
+         
+        </div>
+    </div>
+}
+
+
+
+
+
+    @foreach (var pos in Model.postdetails)
+    {
+        <label> Publié le : @Html.DisplayFor(modelItem => pos.DatePost)</label>
+        <div style="background-color: aliceblue;width:1000px;height:50px">
+            <label>    @Html.DisplayFor(modelItem => pos.Contenu)</label>
+            <br />
+
+            @if (pos.UserId == 1)
+            {
+
+                @Html.ActionLink("Edit", "Edit", new { id = pos.PostId })
+                @Html.ActionLink("Delete", "Delete", new { id = pos.PostId })
+
+            }
+        </div>
+        @Html.RouteLink("Comment", new { action = "Index", controller = "Multiple", PostId = pos.PostId })
+       
+         <label  num="@pos.PostId"   value="hi" id="hi" name="hi" class="like"  >ouii</label>
+      
+            <input id="@pos.PostId" name="butli" type="submit" value="Like" class="like" />
+      
+
+          <label id="hid" num="@pos.PostId"   value="hid" name="hid" class="dislike"> dislike </label>
+           <input id="@pos.PostId" name="butlid" type="submit" value="dislike" class="dislike"/>
+        @Html.HiddenFor(model => model.PostId)
+        @Html.HiddenFor(model => model.UserId)
+            
+         
+            <br />
+     
+    }
+
+<script>
+    $(document).ready(function () {
+
+          
+           $('label[class="like"]').each(function (i,e) {
+                   
+                  
+                    $.ajax({
+                        url: '/ReactPost/Count',
+                        type: "GET",
+                        data: { PostId: $(this).attr('num') },
+                        success: function (response) {
+                          //  var $this = $(this);
+                            //var selKeyVal = $this.attr("value", response);
+                           // $("label[id='hi']").text(response);
+                          //  labelText_servicename = $("#hib").text();
+                       //     $('label[class="like"]').text(response);
+                            $(e).text(response);
+                        }
+
+
+                    })
+                  });
+
+            
+                $('label[class="dislike"]').each(function (i, e) {
+
+
+                    $.ajax({
+                        url: '/ReactPost/CountD',
+                        type: "GET",
+                        data: { PostId: $(this).attr('num') },
+                        success: function (response) {
+                            //  var $this = $(this);
+                            //var selKeyVal = $this.attr("value", response);
+                            // $("label[id='hi']").text(response);
+                            //  labelText_servicename = $("#hib").text();
+                            //     $('label[class="like"]').text(response);
+                            $(e).text(response);
+                        }
+
+
+                    })
+                });
+                   
+
+      
+
+                $(function () {
+                    $(".like").click(function () {
+                        var textValue = $(this).closest("input[name='butli']").attr('id');
+                        $.ajax({
+                            url: '/ReactPost/Test',
+                            type: "POST",
+                            data: { UserId: 1, PostId: textValue },
+                            success: function (response) {
+                                if (response != 0) {
+
+
+                                    $.ajax({
+                                        url: '/ReactPost/CreateDel',
+                                        type: "POST",
+                                        data: { PostId: textValue, UserId: 1, TypeReact: "Like" },
+                                        success: function (response) {
+
+                                            $('label[class="like"]').each(function (i, e) {
+
+
+                                                $.ajax({
+                                                    url: '/ReactPost/Count',
+                                                    type: "GET",
+                                                    data: { PostId: $(this).attr('num') },
+                                                    success: function (response) {
+                                                        //  var $this = $(this);
+                                                        //var selKeyVal = $this.attr("value", response);
+                                                        // $("label[id='hi']").text(response);
+                                                        //  labelText_servicename = $("#hib").text();
+                                                        //     $('label[class="like"]').text(response);
+                                                        $(e).text(response);
+                                                    }
+
+
+                                                })
+                                            });//end loop nbre like 
+
+                                            $('label[class="dislike"]').each(function (i, e) {
+
+
+                                                $.ajax({
+                                                    url: '/ReactPost/CountD',
+                                                    type: "GET",
+                                                    data: { PostId: $(this).attr('num') },
+                                                    success: function (response) {
+                                                        //  var $this = $(this);
+                                                        //var selKeyVal = $this.attr("value", response);
+                                                        // $("label[id='hi']").text(response);
+                                                        //  labelText_servicename = $("#hib").text();
+                                                        //     $('label[class="like"]').text(response);
+                                                        $(e).text(response);
+                                                    }
+
+
+                                                })
+                                            });
+                                        }
+                                    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    /* $.ajax({
+                                        url: '/ReactPost/Create',
+                                        type: "POST",
+                                        data: { PostId: textValue, UserId: 1, TypeReact: "Like" },
+                                        success: function (response) {
+            
+                                            $('label[class="like"]').each(function (i, e) {
+            
+            
+                                                $.ajax({
+                                                    url: '/ReactPost/Count',
+                                                    type: "GET",
+                                                    data: { PostId: $(this).attr('num') },
+                                                    success: function (response) {
+                                                        //  var $this = $(this);
+                                                        //var selKeyVal = $this.attr("value", response);
+                                                        // $("label[id='hi']").text(response);
+                                                        //  labelText_servicename = $("#hib").text();
+                                                        //     $('label[class="like"]').text(response);
+                                                        $(e).text(response);
+                                                    }
+            
+            
+                                                })
+                                            });
+            
+            
+                                        }
+            
+            
+                                    })
+                                */
+
+                                }
+
+                                else {
+                                    //nzid j aime aadeya
+                                    $.ajax({
+                                        url: '/ReactPost/Create',
+                                        type: "POST",
+                                        data: { PostId: textValue, UserId: 1, TypeReact: "Like" },
+                                        success: function (response) {
+
+                                            $('label[class="like"]').each(function (i, e) {
+
+
+                                                $.ajax({
+                                                    url: '/ReactPost/Count',
+                                                    type: "GET",
+                                                    data: { PostId: $(this).attr('num') },
+                                                    success: function (response) {
+                                                        //  var $this = $(this);
+                                                        //var selKeyVal = $this.attr("value", response);
+                                                        // $("label[id='hi']").text(response);
+                                                        //  labelText_servicename = $("#hib").text();
+                                                        //     $('label[class="like"]').text(response);
+                                                        $(e).text(response);
+                                                    }
+                                                });
+                                            })
+                                        }
+                                    });
+
+                                }
+
+
+                            }
+                        });
+                    });
+                });
+
+      
+
+        //truuue function like here
+    /*    $(function () {
+            $(".like").click(function () {
+                // this is how to get the closest textbox
+                // you didn't show your html , maybe .prev() or .next()
+                var textValue = $(this).closest("input[name='butli']").attr('id');
+              
+                $.ajax({
+                    url: '/ReactPost/Create',
+                    type: "POST",
+                    data: { PostId: textValue, UserId: 1, TypeReact: "Like" },
+                    success: function (response) {
+
+                        $('label[class="like"]').each(function (i, e) {
+
+
+                            $.ajax({
+                                url: '/ReactPost/Count',
+                                type: "GET",
+                                data: { PostId: $(this).attr('num') },
+                                success: function (response) {
+                                    //  var $this = $(this);
+                                    //var selKeyVal = $this.attr("value", response);
+                                    // $("label[id='hi']").text(response);
+                                    //  labelText_servicename = $("#hib").text();
+                                    //     $('label[class="like"]').text(response);
+                                    $(e).text(response);
+                                }
+
+
+                            })
+                        });
+
+
+                    }
+
+
+                })
+            });
+        });
+
+
+        */
+
+        $(function () {
+        $(".dislike").click(function () {
+            var textValue = $(this).closest("input[name='butlid']").attr('id');
+            $.ajax({
+                url: '/ReactPost/Create',
+                type: "POST",
+                data: { TypeReact: "Dislike", UserId: 1, PostId: textValue },
+                success: function (response) {
+                    $('label[class="dislike"]').each(function (i, e) {
+
+
+                        $.ajax({
+                            url: '/ReactPost/CountD',
+                            type: "GET",
+                            data: { PostId: $(this).attr('num') },
+                            success: function (response) {
+                                //  var $this = $(this);
+                                //var selKeyVal = $this.attr("value", response);
+                                // $("label[id='hi']").text(response);
+                                //  labelText_servicename = $("#hib").text();
+                                //     $('label[class="like"]').text(response);
+                                $(e).text(response);
+                            }
+
+
+                        })
+                    });
+
+
+            }
+
+            })
+
+
+
+        });
+
+
+        });
+    });
+
+
+    /* else {
+
+                        $.ajax({
+                            url: '/ReactPost/CreateDel',
+                            type: "POST",
+                            data: { PostId: textValue, UserId: 1, TypeReact: "Like" },
+                            success: function (response) {
+
+                                $('label[class="like"]').each(function (i, e) {
+
+
+                                    $.ajax({
+                                        url: '/ReactPost/Count',
+                                        type: "GET",
+                                        data: { PostId: $(this).attr('num') },
+                                        success: function (response) {
+                                            //  var $this = $(this);
+                                            //var selKeyVal = $this.attr("value", response);
+                                            // $("label[id='hi']").text(response);
+                                            //  labelText_servicename = $("#hib").text();
+                                            //     $('label[class="like"]').text(response);
+                                            $(e).text(response);
+                                        }
+
+
+                                    })
+                                });
+                                //ici parcour dislike
+                                $('label[class="dislike"]').each(function (i, e) {
+
+
+                                    $.ajax({
+                                        url: '/ReactPost/CountD',
+                                        type: "GET",
+                                        data: { PostId: $(this).attr('num') },
+                                        success: function (response) {
+                                            //  var $this = $(this);
+                                            //var selKeyVal = $this.attr("value", response);
+                                            // $("label[id='hi']").text(response);
+                                            //  labelText_servicename = $("#hib").text();
+                                            //     $('label[class="like"]').text(response);
+                                            $(e).text(response);
+                                        }
+
+
+                                    })
+                                });
+
+                            }
+
+
+                        })
+                
+
+
+                    }
+    */
+
+
+            </script>
+  

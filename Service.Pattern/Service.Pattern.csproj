@@ -50,8 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IService.cs" />
+    <Compile Include="IServiceChat.cs" />
+    <Compile Include="IServiceReactComment.cs" />
+    <Compile Include="IServiceReactPost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
+    <Compile Include="ServiceChat.cs" />
+    <Compile Include="ServiceReactComment.cs" />
+    <Compile Include="ServiceReactPost.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">

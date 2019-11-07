@@ -54,12 +54,12 @@
     <Compile Include="Candidat.cs" />
     <Compile Include="Candidature.cs" />
     <Compile Include="Chat.cs" />
-    <Compile Include="Choix.cs" />
     <Compile Include="Claim.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Contacts.cs" />
     <Compile Include="Entreprise.cs" />
     <Compile Include="EntrepriseProfile.cs" />
+    <Compile Include="Entretien.cs" />
     <Compile Include="EntretienEnLigne.cs" />
     <Compile Include="EntretienPhysique.cs" />
     <Compile Include="Offer.cs" />
@@ -70,7 +70,6 @@
     <Compile Include="Question.cs" />
     <Compile Include="ReactComment.cs" />
     <Compile Include="ReactPost.cs" />
-    <Compile Include="Reponse.cs" />
     <Compile Include="RHmanager.cs" />
     <Compile Include="subscribe.cs" />
     <Compile Include="TeamWork.cs" />
