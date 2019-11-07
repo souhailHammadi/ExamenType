@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domaine
 {
-    class Claim
+    public class Claim
     {
 
         [Key]

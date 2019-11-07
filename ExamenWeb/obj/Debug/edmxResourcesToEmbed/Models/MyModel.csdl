@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PIdatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Calendriers">
+    <Key>
+      <PropertyRef Name="CalendrierId" />
+    </Key>
+    <Property Name="CalendrierId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="disponibilite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="heure" Type="Single" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Candidatures">
+    <Key>
+      <PropertyRef Name="candidatureId" />
+    </Key>
+    <Property Name="candidatureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="candidatureDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="etat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Candidatures_dbo_Users_UserId" FromRole="Candidatures" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Chats">
+    <Key>
+      <PropertyRef Name="ChatId" />
+    </Key>
+    <Property Name="ChatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Contenu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Vue" Type="Int32" Nullable="false" />
+    <Property Name="DateSend" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SendId" Type="Int32" />
+    <Property Name="RecieveId" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Chats_dbo_Users_RecieveId" FromRole="Chats" ToRole="Users" />
+    <NavigationProperty Name="Users1" Relationship="Self.FK_dbo_Chats_dbo_Users_SendId" FromRole="Chats" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Choixes">
+    <Key>
+      <PropertyRef Name="ChoixID" />
+    </Key>
+    <Property Name="ChoixID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChoixText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QuestionId" Type="Int32" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK_dbo_Choixes_dbo_Questions_QuestionId" FromRole="Choixes" ToRole="Questions" />
+  </EntityType>
+  <EntityType Name="Claims">
+    <Key>
+      <PropertyRef Name="ClaimId" />
+    </Key>
+    <Property Name="ClaimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateClaim" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Contenu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DateComment" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserId" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Comments_dbo_Users_UserId" FromRole="Comments" ToRole="Users" />
+    <NavigationProperty Name="ReactComments" Relationship="Self.FK_dbo_ReactComments_dbo_Comments_CommentId" FromRole="Comments" ToRole="ReactComments" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="contactId1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="contactDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Contacts_dbo_Users_UserId" FromRole="Contacts" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Entreprises">
+    <Key>
+      <PropertyRef Name="EntrepriseId" />
+    </Key>
+    <Property Name="EntrepriseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Candidat_UserId" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Entreprises_dbo_Users_Candidat_UserId" FromRole="Entreprises" ToRole="Users" />
+    <NavigationProperty Name="subscribes" Relationship="Self.FK_dbo_subscribes_dbo_Entreprises_EntrepriseId" FromRole="Entreprises" ToRole="subscribes" />
+  </EntityType>
+  <EntityType Name="EntretienEnLignes">
+    <Key>
+      <PropertyRef Name="EntretienEnLigneId" />
+    </Key>
+    <Property Name="EntretienEnLigneId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="noteEntretien" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK_dbo_Questions_dbo_EntretienEnLignes_EntretienEnLigne_EntretienEnLigneId" FromRole="EntretienEnLignes" ToRole="Questions" />
+  </EntityType>
+  <EntityType Name="EntretienPhysiques">
+    <Key>
+      <PropertyRef Name="EntretienPhysiqueId" />
+    </Key>
+    <Property Name="EntretienPhysiqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateEntretien" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DatePayment" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Amount" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Contenu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="vue" Type="Int32" Nullable="false" />
+    <Property Name="DatePost" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserId" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Posts_dbo_Users_UserId" FromRole="Posts" ToRole="Users" />
+    <NavigationProperty Name="ReactPosts" Relationship="Self.FK_dbo_ReactPosts_dbo_Posts_PostId" FromRole="Posts" ToRole="ReactPosts" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Questions1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EntretienEnLigne_EntretienEnLigneId" Type="Int32" />
+    <NavigationProperty Name="Choixes" Relationship="Self.FK_dbo_Choixes_dbo_Questions_QuestionId" FromRole="Questions" ToRole="Choixes" />
+    <NavigationProperty Name="EntretienEnLignes" Relationship="Self.FK_dbo_Questions_dbo_EntretienEnLignes_EntretienEnLigne_EntretienEnLigneId" FromRole="Questions" ToRole="EntretienEnLignes" />
+    <NavigationProperty Name="Reponses" Relationship="Self.FK_dbo_Reponses_dbo_Questions_QuestionId" FromRole="Questions" ToRole="Reponses" />
+  </EntityType>
+  <EntityType Name="ReactComments">
+    <Key>
+      <PropertyRef Name="ReactCommentId" />
+    </Key>
+    <Property Name="ReactCommentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="TypeReact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CommentId" Type="Int32" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_dbo_ReactComments_dbo_Comments_CommentId" FromRole="ReactComments" ToRole="Comments" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_ReactComments_dbo_Users_UserId" FromRole="ReactComments" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="ReactPosts">
+    <Key>
+      <PropertyRef Name="ReactPostId" />
+    </Key>
+    <Property Name="ReactPostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="TypeReact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PostId" Type="Int32" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK_dbo_ReactPosts_dbo_Posts_PostId" FromRole="ReactPosts" ToRole="Posts" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_ReactPosts_dbo_Users_UserId" FromRole="ReactPosts" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Reponses">
+    <Key>
+      <PropertyRef Name="ReponseID" />
+    </Key>
+    <Property Name="ReponseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReponseText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QuestionId" Type="Int32" />
+    <Property Name="isCorrect" Type="Boolean" Nullable="false" />
+    <Property Name="AnswerQ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK_dbo_Reponses_dbo_Questions_QuestionId" FromRole="Reponses" ToRole="Questions" />
+  </EntityType>
+  <EntityType Name="subscribes">
+    <Key>
+      <PropertyRef Name="subscribeId" />
+    </Key>
+    <Property Name="subscribeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="EntrepriseId" Type="Int32" />
+    <Property Name="subscribeDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Entreprises" Relationship="Self.FK_dbo_subscribes_dbo_Entreprises_EntrepriseId" FromRole="subscribes" ToRole="Entreprises" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_subscribes_dbo_Users_UserId" FromRole="subscribes" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="birthDate" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Skills" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phoneContact" Type="Int64" />
+    <Property Name="picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Discriminator" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Candidatures" Relationship="Self.FK_dbo_Candidatures_dbo_Users_UserId" FromRole="Users" ToRole="Candidatures" />
+    <NavigationProperty Name="Chats" Relationship="Self.FK_dbo_Chats_dbo_Users_RecieveId" FromRole="Users" ToRole="Chats" />
+    <NavigationProperty Name="Chats1" Relationship="Self.FK_dbo_Chats_dbo_Users_SendId" FromRole="Users" ToRole="Chats" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_dbo_Comments_dbo_Users_UserId" FromRole="Users" ToRole="Comments" />
+    <NavigationProperty Name="Contacts" Relationship="Self.FK_dbo_Contacts_dbo_Users_UserId" FromRole="Users" ToRole="Contacts" />
+    <NavigationProperty Name="Entreprises" Relationship="Self.FK_dbo_Entreprises_dbo_Users_Candidat_UserId" FromRole="Users" ToRole="Entreprises" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK_dbo_Posts_dbo_Users_UserId" FromRole="Users" ToRole="Posts" />
+    <NavigationProperty Name="ReactComments" Relationship="Self.FK_dbo_ReactComments_dbo_Users_UserId" FromRole="Users" ToRole="ReactComments" />
+    <NavigationProperty Name="ReactPosts" Relationship="Self.FK_dbo_ReactPosts_dbo_Users_UserId" FromRole="Users" ToRole="ReactPosts" />
+    <NavigationProperty Name="subscribes" Relationship="Self.FK_dbo_subscribes_dbo_Users_UserId" FromRole="Users" ToRole="subscribes" />
+  </EntityType>
+  <Association Name="FK_dbo_Candidatures_dbo_Users_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Candidatures" Type="Self.Candidatures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Candidatures">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Chats_dbo_Users_RecieveId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Chats" Type="Self.Chats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Chats">
+        <PropertyRef Name="RecieveId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Chats_dbo_Users_SendId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Chats" Type="Self.Chats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Chats">
+        <PropertyRef Name="SendId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Choixes_dbo_Questions_QuestionId">
+    <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+    <End Role="Choixes" Type="Self.Choixes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="Choixes">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Comments_dbo_Users_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReactComments_dbo_Comments_CommentId">
+    <End Role="Comments" Type="Self.Comments" Multiplicity="0..1" />
+    <End Role="ReactComments" Type="Self.ReactComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="CommentId" />
+      </Principal>
+      <Dependent Role="ReactComments">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Contacts_dbo_Users_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Contacts" Type="Self.Contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Contacts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Entreprises_dbo_Users_Candidat_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Entreprises" Type="Self.Entreprises" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Entreprises">
+        <PropertyRef Name="Candidat_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_subscribes_dbo_Entreprises_EntrepriseId">
+    <End Role="Entreprises" Type="Self.Entreprises" Multiplicity="0..1" />
+    <End Role="subscribes" Type="Self.subscribes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entreprises">
+        <PropertyRef Name="EntrepriseId" />
+      </Principal>
+      <Dependent Role="subscribes">
+        <PropertyRef Name="EntrepriseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Questions_dbo_EntretienEnLignes_EntretienEnLigne_EntretienEnLigneId">
+    <End Role="EntretienEnLignes" Type="Self.EntretienEnLignes" Multiplicity="0..1" />
+    <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntretienEnLignes">
+        <PropertyRef Name="EntretienEnLigneId" />
+      </Principal>
+      <Dependent Role="Questions">
+        <PropertyRef Name="EntretienEnLigne_EntretienEnLigneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Posts_dbo_Users_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReactPosts_dbo_Posts_PostId">
+    <End Role="Posts" Type="Self.Posts" Multiplicity="0..1" />
+    <End Role="ReactPosts" Type="Self.ReactPosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="ReactPosts">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Reponses_dbo_Questions_QuestionId">
+    <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+    <End Role="Reponses" Type="Self.Reponses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="Reponses">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReactComments_dbo_Users_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="ReactComments" Type="Self.ReactComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ReactComments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReactPosts_dbo_Users_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="ReactPosts" Type="Self.ReactPosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ReactPosts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_subscribes_dbo_Users_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="subscribes" Type="Self.subscribes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="subscribes">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PIdatabaseEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Calendriers" EntityType="Self.Calendriers" />
+    <EntitySet Name="Candidatures" EntityType="Self.Candidatures" />
+    <EntitySet Name="Chats" EntityType="Self.Chats" />
+    <EntitySet Name="Choixes" EntityType="Self.Choixes" />
+    <EntitySet Name="Claims" EntityType="Self.Claims" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" />
+    <EntitySet Name="Contacts" EntityType="Self.Contacts" />
+    <EntitySet Name="Entreprises" EntityType="Self.Entreprises" />
+    <EntitySet Name="EntretienEnLignes" EntityType="Self.EntretienEnLignes" />
+    <EntitySet Name="EntretienPhysiques" EntityType="Self.EntretienPhysiques" />
+    <EntitySet Name="Payments" EntityType="Self.Payments" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" />
+    <EntitySet Name="Questions" EntityType="Self.Questions" />
+    <EntitySet Name="ReactComments" EntityType="Self.ReactComments" />
+    <EntitySet Name="ReactPosts" EntityType="Self.ReactPosts" />
+    <EntitySet Name="Reponses" EntityType="Self.Reponses" />
+    <EntitySet Name="subscribes" EntityType="Self.subscribes" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK_dbo_Candidatures_dbo_Users_UserId" Association="Self.FK_dbo_Candidatures_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Candidatures" EntitySet="Candidatures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Chats_dbo_Users_RecieveId" Association="Self.FK_dbo_Chats_dbo_Users_RecieveId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Chats" EntitySet="Chats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Chats_dbo_Users_SendId" Association="Self.FK_dbo_Chats_dbo_Users_SendId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Chats" EntitySet="Chats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Choixes_dbo_Questions_QuestionId" Association="Self.FK_dbo_Choixes_dbo_Questions_QuestionId">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Choixes" EntitySet="Choixes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Comments_dbo_Users_UserId" Association="Self.FK_dbo_Comments_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReactComments_dbo_Comments_CommentId" Association="Self.FK_dbo_ReactComments_dbo_Comments_CommentId">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="ReactComments" EntitySet="ReactComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Contacts_dbo_Users_UserId" Association="Self.FK_dbo_Contacts_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Contacts" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Entreprises_dbo_Users_Candidat_UserId" Association="Self.FK_dbo_Entreprises_dbo_Users_Candidat_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Entreprises" EntitySet="Entreprises" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_subscribes_dbo_Entreprises_EntrepriseId" Association="Self.FK_dbo_subscribes_dbo_Entreprises_EntrepriseId">
+      <End Role="Entreprises" EntitySet="Entreprises" />
+      <End Role="subscribes" EntitySet="subscribes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Questions_dbo_EntretienEnLignes_EntretienEnLigne_EntretienEnLigneId" Association="Self.FK_dbo_Questions_dbo_EntretienEnLignes_EntretienEnLigne_EntretienEnLigneId">
+      <End Role="EntretienEnLignes" EntitySet="EntretienEnLignes" />
+      <End Role="Questions" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Posts_dbo_Users_UserId" Association="Self.FK_dbo_Posts_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReactPosts_dbo_Posts_PostId" Association="Self.FK_dbo_ReactPosts_dbo_Posts_PostId">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="ReactPosts" EntitySet="ReactPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Reponses_dbo_Questions_QuestionId" Association="Self.FK_dbo_Reponses_dbo_Questions_QuestionId">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Reponses" EntitySet="Reponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReactComments_dbo_Users_UserId" Association="Self.FK_dbo_ReactComments_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ReactComments" EntitySet="ReactComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReactPosts_dbo_Users_UserId" Association="Self.FK_dbo_ReactPosts_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ReactPosts" EntitySet="ReactPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_subscribes_dbo_Users_UserId" Association="Self.FK_dbo_subscribes_dbo_Users_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="subscribes" EntitySet="subscribes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

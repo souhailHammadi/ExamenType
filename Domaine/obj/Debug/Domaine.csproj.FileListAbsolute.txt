@@ -58,3 +58,15 @@ D:\4ERP-BI1\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.csproj.CoreCompileInputs.
 D:\4ERP-BI1\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.csproj.CopyComplete
 D:\4ERP-BI1\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.dll
 D:\4ERP-BI1\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.pdb
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\bin\Debug\Domaine.dll.config
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\bin\Debug\Domaine.dll
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\bin\Debug\Domaine.pdb
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\obj\Debug\Domaine.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\obj\Debug\Domaine.dll
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\obj\Debug\Domaine.pdb
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\bin\Debug\EntityFramework.dll
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\bin\Debug\EntityFramework.xml
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\DELL\Documents\Visual Studio 2015\Projects\ExamenType-master\Domaine\bin\Debug\fr\EntityFramework.SqlServer.resources.dll

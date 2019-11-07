@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PIdatabaseModelStoreContainer" CdmEntityContainer="PIdatabaseEntities1">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="PIdatabaseModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calendriers">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Calendriers">
+        <MappingFragment StoreEntitySet="Calendriers">
+          <ScalarProperty Name="CalendrierId" ColumnName="CalendrierId" />
+          <ScalarProperty Name="disponibilite" ColumnName="disponibilite" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="heure" ColumnName="heure" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Candidatures">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Candidatures">
+        <MappingFragment StoreEntitySet="Candidatures">
+          <ScalarProperty Name="candidatureId" ColumnName="candidatureId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="candidatureDate" ColumnName="candidatureDate" />
+          <ScalarProperty Name="etat" ColumnName="etat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chats">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Chats">
+        <MappingFragment StoreEntitySet="Chats">
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="Contenu" ColumnName="Contenu" />
+          <ScalarProperty Name="Vue" ColumnName="Vue" />
+          <ScalarProperty Name="DateSend" ColumnName="DateSend" />
+          <ScalarProperty Name="SendId" ColumnName="SendId" />
+          <ScalarProperty Name="RecieveId" ColumnName="RecieveId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Choixes">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Choixes">
+        <MappingFragment StoreEntitySet="Choixes">
+          <ScalarProperty Name="ChoixID" ColumnName="ChoixID" />
+          <ScalarProperty Name="ChoixText" ColumnName="ChoixText" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Claims">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Claims">
+        <MappingFragment StoreEntitySet="Claims">
+          <ScalarProperty Name="ClaimId" ColumnName="ClaimId" />
+          <ScalarProperty Name="DateClaim" ColumnName="DateClaim" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Comments">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="Contenu" ColumnName="Contenu" />
+          <ScalarProperty Name="DateComment" ColumnName="DateComment" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Contacts">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="contactId1" ColumnName="contactId1" />
+          <ScalarProperty Name="contactDate" ColumnName="contactDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entreprises">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Entreprises">
+        <MappingFragment StoreEntitySet="Entreprises">
+          <ScalarProperty Name="EntrepriseId" ColumnName="EntrepriseId" />
+          <ScalarProperty Name="Candidat_UserId" ColumnName="Candidat_UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntretienEnLignes">
+      <EntityTypeMapping TypeName="PIdatabaseModel.EntretienEnLignes">
+        <MappingFragment StoreEntitySet="EntretienEnLignes">
+          <ScalarProperty Name="EntretienEnLigneId" ColumnName="EntretienEnLigneId" />
+          <ScalarProperty Name="noteEntretien" ColumnName="noteEntretien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntretienPhysiques">
+      <EntityTypeMapping TypeName="PIdatabaseModel.EntretienPhysiques">
+        <MappingFragment StoreEntitySet="EntretienPhysiques">
+          <ScalarProperty Name="EntretienPhysiqueId" ColumnName="EntretienPhysiqueId" />
+          <ScalarProperty Name="DateEntretien" ColumnName="DateEntretien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Payments">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="DatePayment" ColumnName="DatePayment" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Posts">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Contenu" ColumnName="Contenu" />
+          <ScalarProperty Name="vue" ColumnName="vue" />
+          <ScalarProperty Name="DatePost" ColumnName="DatePost" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Questions">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="Questions1" ColumnName="Questions" />
+          <ScalarProperty Name="EntretienEnLigne_EntretienEnLigneId" ColumnName="EntretienEnLigne_EntretienEnLigneId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReactComments">
+      <EntityTypeMapping TypeName="PIdatabaseModel.ReactComments">
+        <MappingFragment StoreEntitySet="ReactComments">
+          <ScalarProperty Name="ReactCommentId" ColumnName="ReactCommentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TypeReact" ColumnName="TypeReact" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReactPosts">
+      <EntityTypeMapping TypeName="PIdatabaseModel.ReactPosts">
+        <MappingFragment StoreEntitySet="ReactPosts">
+          <ScalarProperty Name="ReactPostId" ColumnName="ReactPostId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TypeReact" ColumnName="TypeReact" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reponses">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Reponses">
+        <MappingFragment StoreEntitySet="Reponses">
+          <ScalarProperty Name="ReponseID" ColumnName="ReponseID" />
+          <ScalarProperty Name="ReponseText" ColumnName="ReponseText" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="isCorrect" ColumnName="isCorrect" />
+          <ScalarProperty Name="AnswerQ" ColumnName="AnswerQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subscribes">
+      <EntityTypeMapping TypeName="PIdatabaseModel.subscribes">
+        <MappingFragment StoreEntitySet="subscribes">
+          <ScalarProperty Name="subscribeId" ColumnName="subscribeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EntrepriseId" ColumnName="EntrepriseId" />
+          <ScalarProperty Name="subscribeDate" ColumnName="subscribeDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PIdatabaseModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="experience" ColumnName="experience" />
+          <ScalarProperty Name="bio" ColumnName="bio" />
+          <ScalarProperty Name="phoneContact" ColumnName="phoneContact" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

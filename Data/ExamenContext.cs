@@ -31,6 +31,9 @@ namespace Data
         public DbSet<Reponse> Reponse { get; set; }
         public DbSet<Choix> Choix { get; set; }
 
+        public DbSet<Claim> Claims { get; set; }
+   
+        public DbSet<Payment> Payments { get; set; }
 
 
     }
