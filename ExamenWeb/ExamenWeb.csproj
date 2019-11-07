@@ -562,9 +562,10 @@
     <Content Include="Views\RHQuestions\Details.cshtml" />
     <Content Include="Views\RHQuestions\Edit.cshtml" />
     <Content Include="Views\RHQuestions\Index.cshtml" />
-    <Content Include="Views\RHAnswer\IndexC.cshtml" />
     <Content Include="Views\RHAnswer\Index.cshtml" />
     <Content Include="Views\RHAnswer\Create.cshtml" />
+    <Content Include="Views\RHAnswer\Edit.cshtml" />
+    <Content Include="Views\RHAnswer\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
