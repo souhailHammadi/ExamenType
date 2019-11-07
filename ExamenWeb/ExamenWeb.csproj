@@ -25,7 +25,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -199,7 +198,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EntretienEnLigneController.cs" />
+    <Compile Include="Controllers\CandidatController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -207,9 +206,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CandidatModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -221,6 +221,12 @@
     <Content Include="Content\blog2.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\flexslider.css" />
+    <Content Include="Content\css\icomoon.css" />
+    <Content Include="Content\css\owl.carousel.min.css" />
+    <Content Include="Content\css\owl.theme.default.min.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\d1.png" />
     <Content Include="Content\header-bg.jpg" />
     <Content Include="Content\i1.jpg" />
@@ -248,6 +254,7 @@
     <Content Include="Content\t1.png" />
     <Content Include="Content\t2.png" />
     <Content Include="Content\t3.png" />
+    <Content Include="Content\Upload\Capture d’écran %281%29.png" />
     <Content Include="Content\user.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -275,6 +282,8 @@
     <Content Include="fonts\Linearicons-Free.woff" />
     <Content Include="fonts\Linearicons-Free.woff2" />
     <Content Include="Scripts\.DS_Store" />
+    <Content Include="Content\css\bootstrap.css.map" />
+    <Content Include="Content\css\style.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\easing.min.js" />
     <Content Include="Scripts\google-map.js" />
@@ -345,22 +354,24 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutCustom.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutCustom.cshtml" />
-    <Content Include="Views\EntretienEnLigne\QuizTest.cshtml" />
+    <Content Include="Views\Candidat\ShowProfile.cshtml" />
+    <Content Include="Views\Candidat\Profil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\blog\" />
-    <Folder Include="Content\css\" />
     <Folder Include="Content\elements\" />
+    <Folder Include="Content\js\" />
     <Folder Include="Content\pages\" />
     <Folder Include="Content\scss\" />
     <Folder Include="Scripts\vendor\" />
+    <Folder Include="Views\Candidat\css\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

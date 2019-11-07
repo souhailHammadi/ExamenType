@@ -57,9 +57,21 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201911041830182_v1.cs" />
-    <Compile Include="Migrations\201911041830182_v1.Designer.cs">
-      <DependentUpon>201911041830182_v1.cs</DependentUpon>
+    <Compile Include="Migrations\201910311648555_m0.cs" />
+    <Compile Include="Migrations\201910311648555_m0.Designer.cs">
+      <DependentUpon>201910311648555_m0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911012058161_m1.cs" />
+    <Compile Include="Migrations\201911012058161_m1.Designer.cs">
+      <DependentUpon>201911012058161_m1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911031423490_m2.cs" />
+    <Compile Include="Migrations\201911031423490_m2.Designer.cs">
+      <DependentUpon>201911031423490_m2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911031815507_m3.cs" />
+    <Compile Include="Migrations\201911031815507_m3.Designer.cs">
+      <DependentUpon>201911031815507_m3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,8 +91,17 @@
     <Folder Include="MyConventions\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911041830182_v1.resx">
-      <DependentUpon>201911041830182_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910311648555_m0.resx">
+      <DependentUpon>201910311648555_m0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911012058161_m1.resx">
+      <DependentUpon>201911012058161_m1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911031423490_m2.resx">
+      <DependentUpon>201911031423490_m2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911031815507_m3.resx">
+      <DependentUpon>201911031815507_m3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

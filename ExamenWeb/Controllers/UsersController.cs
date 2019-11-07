@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Domaine;
+using ExamenWeb.Models;
 using Data;
 
 namespace ExamenWeb.Controllers
@@ -47,7 +48,7 @@ namespace ExamenWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,login,password")] User user)
+        public ActionResult Create([Bind(Include = "UserId,login,password,Mail")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +80,7 @@ namespace ExamenWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,login,password")] User user)
+        public ActionResult Edit([Bind(Include = "UserId,login,password,Mail")] User user)
         {
             if (ModelState.IsValid)
             {

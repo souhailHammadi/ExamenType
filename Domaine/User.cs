@@ -16,5 +16,6 @@ namespace Domaine
         [StringLength(25, ErrorMessage = "Ne doit pas depassé 25 caractéres!")]
         [MinLength(8,ErrorMessage = "Au minimum 8 caractéres!")]
         public String password { get; set; }
+        public String Mail { get; set; }
     }
 }

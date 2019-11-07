@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domaine
+namespace Domain.Entity
 {
    public class Calendrier
     {
