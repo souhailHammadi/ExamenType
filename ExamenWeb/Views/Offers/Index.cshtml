@@ -1,0 +1,618 @@
+﻿@model IEnumerable<Domaine.Offer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+
+
+
+ <!-- start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Jobs Listing
+                </h1>
+                <p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="category.html"> Job category</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+<section class="post-area section-gap">
+    <div class="container">
+        <div class="row justify-content-center d-flex">
+            <div class="col-lg-8 post-list">
+                <ul class="cat-list">
+                    <li><a href="#">Recent</a></li>
+                    <li><a href="#">Full Time</a></li>
+                    <li><a href="#">Intern</a></li>
+                    <li><a href="#">part Time</a></li>
+                </ul>
+@foreach (var item in Model)
+{
+    <div class="single-post d-flex flex-row">
+        <div class="thumb">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAABFCAYAAABAB2gNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5ZThjMTE2MS05YjA5LTQ0ODMtOTRjMy0xMzViNzE4OTNlODUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTU0MkQ1NjAxMTUyMTFFOEJEOUNCNzVENUZEQkMzRTEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTU0MkQ1NUYxMTUyMTFFOEJEOUNCNzVENUZEQkMzRTEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpmZTJmNzk5Zi04YjRmLTQzODQtODMwOS05NWI0ZjRkOTUxYjQiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo0YTlmZWJmYy0zNjVkLTExN2ItOGNm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" alt="">
+            <ul class="tags">
+                <li>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.offerId })
+                </li>
+                <li>
+                    @Html.ActionLink("Details", "Details", new { id = item.offerId })
+                </li>
+                <li>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.offerId })
+                </li>
+            </ul>
+        </div>
+        <div class="details">
+            <div class="title d-flex flex-row justify-content-between">
+                <div class="titles">
+                    <h4>@Html.DisplayFor(modelItem => item.titleOffer)</h4>
+                    <h6>@Html.DisplayFor(modelItem => item.contractTypeOffer)</h6>
+                </div>
+                <ul class="btns">
+                    <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                    <li><a href="#">Apply</a></li>
+                </ul>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+            </p>
+            <h5></h5>
+            <p class="address"><span class="lnr lnr-map"></span> @Html.DisplayFor(modelItem => item.location)</p>
+            <p class="address"><span class="lnr lnr-database"></span> @Html.DisplayFor(modelItem => item.salary) $</p>
+        </div>
+    </div>
+}
+               
+                <!--
+                <div class="single-post d-flex flex-row">
+                    <div class="thumb">
+                        <img src="img/post.png" alt="">
+                        <ul class="tags">
+                            <li>
+                                <a href="#">Art</a>
+                            </li>
+                            <li>
+                                <a href="#">Media</a>
+                            </li>
+                            <li>
+                                <a href="#">Design</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div class="title d-flex flex-row justify-content-between">
+                            <div class="titles">
+                                <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                <h6>Premium Labels Limited</h6>
+                            </div>
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                        </p>
+                        <h5>Job Nature: Full time</h5>
+                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                    </div>
+                </div>
+                <div class="single-post d-flex flex-row">
+                    <div class="thumb">
+                        <img src="img/post.png" alt="">
+                        <ul class="tags">
+                            <li>
+                                <a href="#">Art</a>
+                            </li>
+                            <li>
+                                <a href="#">Media</a>
+                            </li>
+                            <li>
+                                <a href="#">Design</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div class="title d-flex flex-row justify-content-between">
+                            <div class="titles">
+                                <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                <h6>Premium Labels Limited</h6>
+                            </div>
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                        </p>
+                        <h5>Job Nature: Full time</h5>
+                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                    </div>
+                </div>
+                <div class="single-post d-flex flex-row">
+                    <div class="thumb">
+                        <img src="img/post.png" alt="">
+                        <ul class="tags">
+                            <li>
+                                <a href="#">Art</a>
+                            </li>
+                            <li>
+                                <a href="#">Media</a>
+                            </li>
+                            <li>
+                                <a href="#">Design</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div class="title d-flex flex-row justify-content-between">
+                            <div class="titles">
+                                <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                <h6>Premium Labels Limited</h6>
+                            </div>
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                        </p>
+                        <h5>Job Nature: Full time</h5>
+                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                    </div>
+                </div>
+                <div class="single-post d-flex flex-row">
+                    <div class="thumb">
+                        <img src="img/post.png" alt="">
+                        <ul class="tags">
+                            <li>
+                                <a href="#">Art</a>
+                            </li>
+                            <li>
+                                <a href="#">Media</a>
+                            </li>
+                            <li>
+                                <a href="#">Design</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div class="title d-flex flex-row justify-content-between">
+                            <div class="titles">
+                                <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                <h6>Premium Labels Limited</h6>
+                            </div>
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                        </p>
+                        <h5>Job Nature: Full time</h5>
+                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                    </div>
+                </div>
+                <div class="single-post d-flex flex-row">
+                    <div class="thumb">
+                        <img src="img/post.png" alt="">
+                        <ul class="tags">
+                            <li>
+                                <a href="#">Art</a>
+                            </li>
+                            <li>
+                                <a href="#">Media</a>
+                            </li>
+                            <li>
+                                <a href="#">Design</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div class="title d-flex flex-row justify-content-between">
+                            <div class="titles">
+                                <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                <h6>Premium Labels Limited</h6>
+                            </div>
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                        </p>
+                        <h5>Job Nature: Full time</h5>
+                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                    </div>
+                </div>
+                <div class="single-post d-flex flex-row">
+                    <div class="thumb">
+                        <img src="img/post.png" alt="">
+                        <ul class="tags">
+                            <li>
+                                <a href="#">Art</a>
+                            </li>
+                            <li>
+                                <a href="#">Media</a>
+                            </li>
+                            <li>
+                                <a href="#">Design</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div class="title d-flex flex-row justify-content-between">
+                            <div class="titles">
+                                <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                <h6>Premium Labels Limited</h6>
+                            </div>
+                            <ul class="btns">
+                                <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                <li><a href="#">Apply</a></li>
+                            </ul>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                        </p>
+                        <h5>Job Nature: Full time</h5>
+                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                    </div>
+                </div>
+
+                <a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
+
+            </div>
+            <div class="col-lg-4 sidebar">
+                <div class="single-slidebar">
+                    <h4>Jobs by Location</h4>
+                    <ul class="cat-list">
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>New York</p><span>37</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Park Montana</p><span>57</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Atlanta</p><span>33</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Arizona</p><span>36</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Florida</p><span>47</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Rocky Beach</p><span>27</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Chicago</p><span>17</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="single-slidebar">
+                    <h4>Top rated job posts</h4>
+                    <div class="active-relatedjob-carusel owl-carousel owl-theme owl-loaded">
+
+
+
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-1120px, 0px, 0px); transition: all 0.25s ease 0s; width: 1960px;">
+                                <div class="owl-item cloned" style="width: 250px; margin-right: 30px;">
+                                    <div class="single-rated">
+                                        <img class="img-fluid" src="img/r1.jpg" alt="">
+                                        <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                        <h6>Premium Labels Limited</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                        </p>
+                                        <h5>Job Nature: Full time</h5>
+                                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                        <a href="#" class="btns text-uppercase">Apply job</a>
+                                    </div>
+                                </div><div class="owl-item cloned" style="width: 250px; margin-right: 30px;">
+                                    <div class="single-rated">
+                                        <img class="img-fluid" src="img/r1.jpg" alt="">
+                                        <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                        <h6>Premium Labels Limited</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                        </p>
+                                        <h5>Job Nature: Full time</h5>
+                                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                        <a href="#" class="btns text-uppercase">Apply job</a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 250px; margin-right: 30px;">
+                                    <div class="single-rated">
+                                        <img class="img-fluid" src="img/r1.jpg" alt="">
+                                        <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                        <h6>Premium Labels Limited</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                        </p>
+                                        <h5>Job Nature: Full time</h5>
+                                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                        <a href="#" class="btns text-uppercase">Apply job</a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 250px; margin-right: 30px;">
+                                    <div class="single-rated">
+                                        <img class="img-fluid" src="img/r1.jpg" alt="">
+                                        <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                        <h6>Premium Labels Limited</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                        </p>
+                                        <h5>Job Nature: Full time</h5>
+                                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                        <a href="#" class="btns text-uppercase">Apply job</a>
+                                    </div>
+                                </div><div class="owl-item active" style="width: 250px; margin-right: 30px;">
+                                    <div class="single-rated">
+                                        <img class="img-fluid" src="img/r1.jpg" alt="">
+                                        <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                        <h6>Premium Labels Limited</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                        </p>
+                                        <h5>Job Nature: Full time</h5>
+                                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                        <a href="#" class="btns text-uppercase">Apply job</a>
+                                    </div>
+                                </div><div class="owl-item cloned" style="width: 250px; margin-right: 30px;">
+                                    <div class="single-rated">
+                                        <img class="img-fluid" src="img/r1.jpg" alt="">
+                                        <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                        <h6>Premium Labels Limited</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                        </p>
+                                        <h5>Job Nature: Full time</h5>
+                                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                        <a href="#" class="btns text-uppercase">Apply job</a>
+                                    </div>
+                                </div><div class="owl-item cloned" style="width: 250px; margin-right: 30px;">
+                                    <div class="single-rated">
+                                        <img class="img-fluid" src="img/r1.jpg" alt="">
+                                        <a href="single.html"><h4>Creative Art Designer</h4></a>
+                                        <h6>Premium Labels Limited</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+                                        </p>
+                                        <h5>Job Nature: Full time</h5>
+                                        <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                                        <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+                                        <a href="#" class="btns text-uppercase">Apply job</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="display: none;">prev</div><div class="owl-next" style="display: none;">next</div></div><div class="owl-dots" style=""><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot active"><span></span></div></div></div>
+                    </div>
+                </div>
+
+                <div class="single-slidebar">
+                    <h4>Jobs by Category</h4>
+                    <ul class="cat-list">
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Technology</p><span>37</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Media &amp; News</p><span>57</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Goverment</p><span>33</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Medical</p><span>36</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Restaurants</p><span>47</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Developer</p><span>27</span></a></li>
+                        <li><a class="justify-content-between d-flex" href="category.html"><p>Accounting</p><span>17</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="single-slidebar">
+                    <h4>Carrer Advice Blog</h4>
+                    <div class="blog-list">
+                        <div class="single-blog " style="background:#000 url(img/blog1.jpg);">
+                            <a href="single.html">
+                                <h4>
+                                    Home Audio Recording <br>
+                                    For Everyone
+                                </h4>
+                            </a>
+                            <div class="meta justify-content-between d-flex">
+                                <p>
+                                    02 Hours ago
+                                </p>
+                                <p>
+                                    <span class="lnr lnr-heart"></span>
+                                    06
+                                    <span class="lnr lnr-bubble"></span>
+                                    02
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single-blog " style="background:#000 url(img/blog2.jpg);">
+                            <a href="single.html">
+                                <h4>
+                                    Home Audio Recording <br>
+                                    For Everyone
+                                </h4>
+                            </a>
+                            <div class="meta justify-content-between d-flex">
+                                <p>
+                                    02 Hours ago
+                                </p>
+                                <p>
+                                    <span class="lnr lnr-heart"></span>
+                                    06
+                                    <span class="lnr lnr-bubble"></span>
+                                    02
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single-blog " style="background:#000 url(img/blog1.jpg);">
+                            <a href="single.html">
+                                <h4>
+                                    Home Audio Recording <br>
+                                    For Everyone
+                                </h4>
+                            </a>
+                            <div class="meta justify-content-between d-flex">
+                                <p>
+                                    02 Hours ago
+                                </p>
+                                <p>
+                                    <span class="lnr lnr-heart"></span>
+                                    06
+                                    <span class="lnr lnr-bubble"></span>
+                                    02
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>-->
+        </div>
+            <div class="col-lg-4 sidebar">
+                <div class="single-widget search-widget">
+                    <form class="example" action="#" style="margin:auto;max-width:300px">
+                        <input type="text" placeholder="Search Posts" name="search2">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="single-widget protfolio-widget">
+                    <img src="img/blog/user2.jpg" alt="">
+                    <a href="#"><h4>Adele Gonzalez</h4></a>
+                    <p>
+                        MCSE boot camps have its supporters and
+                        its detractors. Some people do not understand why you should have to spend money
+                        on boot camp when you can get.
+                    </p>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="single-widget category-widget">
+                    <h4 class="title">Post Categories</h4>
+                    <ul>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Techlology</h6> <span>37</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Lifestyle</h6> <span>24</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Fashion</h6> <span>59</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Art</h6> <span>29</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Food</h6> <span>15</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Architecture</h6> <span>09</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Adventure</h6> <span>44</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="single-widget recent-posts-widget">
+                    <h4 class="title">Recent Posts</h4>
+                    <div class="blog-list ">
+                        <div class="single-recent-post d-flex flex-row">
+                            <div class="recent-thumb">
+                                <img class="img-fluid" src="img/blog/r1.jpg" alt="">
+                            </div>
+                            <div class="recent-details">
+                                <a href="blog-single.html">
+                                    <h4>
+                                        Home Audio Recording
+                                        For Everyone
+                                    </h4>
+                                </a>
+                                <p>
+                                    02 hours ago
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single-recent-post d-flex flex-row">
+                            <div class="recent-thumb">
+                                <img class="img-fluid" src="img/blog/r2.jpg" alt="">
+                            </div>
+                            <div class="recent-details">
+                                <a href="blog-single.html">
+                                    <h4>
+                                        Home Audio Recording
+                                        For Everyone
+                                    </h4>
+                                </a>
+                                <p>
+                                    02 hours ago
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single-recent-post d-flex flex-row">
+                            <div class="recent-thumb">
+                                <img class="img-fluid" src="img/blog/r3.jpg" alt="">
+                            </div>
+                            <div class="recent-details">
+                                <a href="blog-single.html">
+                                    <h4>
+                                        Home Audio Recording
+                                        For Everyone
+                                    </h4>
+                                </a>
+                                <p>
+                                    02 hours ago
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single-recent-post d-flex flex-row">
+                            <div class="recent-thumb">
+                                <img class="img-fluid" src="img/blog/r4.jpg" alt="">
+                            </div>
+                            <div class="recent-details">
+                                <a href="blog-single.html">
+                                    <h4>
+                                        Home Audio Recording
+                                        For Everyone
+                                    </h4>
+                                </a>
+                                <p>
+                                    02 hours ago
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="single-widget category-widget">
+                    <h4 class="title">Post Archive</h4>
+                    <ul>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Dec '17</h6> <span>37</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Nov '17</h6> <span>24</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Oct '17</h6> <span>59</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Sep '17</h6> <span>29</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Aug '17</h6> <span>15</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Jul '17</h6> <span>09</span></a></li>
+                        <li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Jun '17</h6> <span>44</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="single-widget tags-widget">
+                    <h4 class="title">Tag Clouds</h4>
+                    <ul>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Art</a></li>
+                        <li><a href="#">Adventure</a></li>
+                        <li><a href="#">Food</a></li>
+                        <li><a href="#">Techlology</a></li>
+                        <li><a href="#">Fashion</a></li>
+                        <li><a href="#">Architecture</a></li>
+                        <li><a href="#">Food</a></li>
+                        <li><a href="#">Technology</a></li>
+                    </ul>
+                </div>
+
+            </div>
+    </div>
+    </div>
+</section>

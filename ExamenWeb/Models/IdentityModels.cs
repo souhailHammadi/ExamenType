@@ -31,5 +31,13 @@ namespace ExamenWeb.Models
         }
 
         public System.Data.Entity.DbSet<Domaine.Candidature> Candidatures { get; set; }
+
+        //public System.Data.Entity.DbSet<Domaine.Team> Teams { get; set; }
+
+        public System.Data.Entity.DbSet<Domaine.AdminEntreprise> AdminEntreprises { get; set; }
+
+        public System.Data.Entity.DbSet<Domaine.ProjectManager> ProjectManagers { get; set; }
+
+        public System.Data.Entity.DbSet<Domaine.RHmanager> RHmanagers { get; set; }
     }
 }

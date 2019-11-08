@@ -1,0 +1,83 @@
+﻿@model Domaine.Offer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Offer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.projectManager.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.projectManager.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rHManager.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rHManager.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.titleOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titleOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.referenceOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.referenceOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.durationOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.durationOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contractTypeOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contractTypeOffer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.offerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

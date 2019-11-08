@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Domaine.AdminEntreprise>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.entreprise.EntrepriseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.team.teamId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contact)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.entreprise.EntrepriseId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.team.teamId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contact)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.adminId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.adminId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.adminId })
+        </td>
+    </tr>
+}
+
+</table>

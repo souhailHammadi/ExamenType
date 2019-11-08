@@ -44,17 +44,15 @@ C:\Users\infoMix\Desktop\PIDEV\ExamenType\Domaine\bin\Debug\fr\EntityFramework.r
 C:\Users\infoMix\Desktop\PIDEV\ExamenType\Domaine\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
 C:\Users\infoMix\Desktop\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.dll
 C:\Users\infoMix\Desktop\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.pdb
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\bin\Debug\Domaine.dll.config
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\bin\Debug\Domaine.dll
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\bin\Debug\Domaine.pdb
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\bin\Debug\EntityFramework.dll
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\bin\Debug\EntityFramework.SqlServer.dll
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\bin\Debug\EntityFramework.xml
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\bin\Debug\EntityFramework.SqlServer.xml
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\bin\Debug\fr\EntityFramework.resources.dll
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.csprojAssemblyReference.cache
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.csproj.CoreCompileInputs.cache
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.csproj.CopyComplete
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.dll
-D:\4ERP-BI1\PIDEV\ExamenType\Domaine\obj\Debug\Domaine.pdb
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\bin\Debug\Domaine.dll.config
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\bin\Debug\Domaine.dll
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\bin\Debug\Domaine.pdb
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\bin\Debug\EntityFramework.dll
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\bin\Debug\EntityFramework.xml
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\obj\Debug\Domaine.dll
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\obj\Debug\Domaine.pdb
+C:\Users\AGENT6\Desktop\ExamenType (1)\ExamenType\Domaine\obj\Debug\Domaine.csprojResolveAssemblyReference.cache

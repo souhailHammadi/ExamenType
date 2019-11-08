@@ -57,9 +57,17 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201911041830182_v1.cs" />
-    <Compile Include="Migrations\201911041830182_v1.Designer.cs">
-      <DependentUpon>201911041830182_v1.cs</DependentUpon>
+    <Compile Include="Migrations\201911071923403_mig1.cs" />
+    <Compile Include="Migrations\201911071923403_mig1.Designer.cs">
+      <DependentUpon>201911071923403_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911072144596_mig11.cs" />
+    <Compile Include="Migrations\201911072144596_mig11.Designer.cs">
+      <DependentUpon>201911072144596_mig11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911072150180_mig12.cs" />
+    <Compile Include="Migrations\201911072150180_mig12.Designer.cs">
+      <DependentUpon>201911072150180_mig12.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,8 +87,14 @@
     <Folder Include="MyConventions\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911041830182_v1.resx">
-      <DependentUpon>201911041830182_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911071923403_mig1.resx">
+      <DependentUpon>201911071923403_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911072144596_mig11.resx">
+      <DependentUpon>201911072144596_mig11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911072150180_mig12.resx">
+      <DependentUpon>201911072150180_mig12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domaine
+namespace Domain.Entity
 {
-    public class EntretienPhysique
+    public class EntretienPhysique:Entretien
     {
         public int EntretienPhysiqueId { get; set; }
         /*[ForeignKey("Calendrier")]

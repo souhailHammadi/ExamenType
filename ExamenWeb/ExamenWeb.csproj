@@ -25,7 +25,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -199,9 +198,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EntretienEnLigneController.cs" />
+    <Compile Include="Controllers\AdminEntreprisesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OffersController.cs" />
+    <Compile Include="Controllers\ProjectManagersController.cs" />
+    <Compile Include="Controllers\RHmanagersController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -209,7 +212,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -351,13 +353,38 @@
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutCustom.cshtml" />
-    <Content Include="Views\EntretienEnLigne\QuizTest.cshtml" />
+    <Content Include="Views\Offers\Create.cshtml" />
+    <Content Include="Views\Offers\Delete.cshtml" />
+    <Content Include="Views\Offers\Details.cshtml" />
+    <Content Include="Views\Offers\Edit.cshtml" />
+    <Content Include="Views\Offers\Index.cshtml" />
+    <Content Include="Views\Teams\Create.cshtml" />
+    <Content Include="Views\Teams\Delete.cshtml" />
+    <Content Include="Views\Teams\Details.cshtml" />
+    <Content Include="Views\Teams\Edit.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\RHmanagers\Create.cshtml" />
+    <Content Include="Views\RHmanagers\Delete.cshtml" />
+    <Content Include="Views\RHmanagers\Details.cshtml" />
+    <Content Include="Views\RHmanagers\Edit.cshtml" />
+    <Content Include="Views\RHmanagers\Index.cshtml" />
+    <Content Include="Views\AdminEntreprises\Create.cshtml" />
+    <Content Include="Views\AdminEntreprises\Delete.cshtml" />
+    <Content Include="Views\AdminEntreprises\Details.cshtml" />
+    <Content Include="Views\AdminEntreprises\Edit.cshtml" />
+    <Content Include="Views\AdminEntreprises\Index.cshtml" />
+    <Content Include="Views\ProjectManagers\Create.cshtml" />
+    <Content Include="Views\ProjectManagers\Delete.cshtml" />
+    <Content Include="Views\ProjectManagers\Details.cshtml" />
+    <Content Include="Views\ProjectManagers\Edit.cshtml" />
+    <Content Include="Views\ProjectManagers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\blog\" />
     <Folder Include="Content\css\" />
     <Folder Include="Content\elements\" />
+    <Folder Include="Content\fonts\" />
     <Folder Include="Content\pages\" />
     <Folder Include="Content\scss\" />
     <Folder Include="Scripts\vendor\" />

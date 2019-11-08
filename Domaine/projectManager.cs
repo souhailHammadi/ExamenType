@@ -8,30 +8,22 @@ using System.Threading.Tasks;
 
 namespace Domaine
 {
-    public class projectManager
+    public class ProjectManager
     {
         [Key]
-        [Column(Order = 0)]
-        private int ManagerID { get; set; }
+        [ForeignKey("team")]
+        public int projectManagerId { get; set; }
+        
+        public virtual Team team { get; set; }
+        public string name { get; set; }
+        public string surname { get; set; }
+        public string mail { get; set; }
+        public string contact { get; set; }
 
-        [Column(Order = 1)]
-        [ForeignKey("teamPMID")]
-        public virtual TeamWork teamPM { get; set; }
-        public int? temPMID { get; set; }
-
-        [Column(Order = 2)]
-        private string nameManager { get; set; }
-
-        [Column(Order = 3)]
-        private string surnameManager { get; set; }
-
-        [Column(Order = 4)]
-        private int numberManager{ get; set; }
-
-        [Column(Order = 5)]
-        private string contactManager { get; set; }
        
-        public virtual ICollection<Offer> offersManager { get; set; }
+        
+        public ICollection<Offer> offerListProjectManager { get; set; }
 
+        public const string role = "projectmanager";
     }
 }

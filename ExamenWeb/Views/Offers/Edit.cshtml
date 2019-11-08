@@ -1,0 +1,95 @@
+﻿@model Domaine.Offer
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+<!-- start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Edit Offer
+                </h1>
+                <p class="text-white"><a href="Index.cshtml">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#"> Contact Us</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="section-top-border">
+            <h4>Offer</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.offerId)
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.titleOffer, new { htmlAttributes = new { @class = "single-input", placeholder = "Title" } })
+                    @Html.ValidationMessageFor(model => model.titleOffer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.referenceOffer, new { htmlAttributes = new { @class = "single-input", placeholder = "Reference" } })
+                    @Html.ValidationMessageFor(model => model.referenceOffer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+               <div class="col-md-10">
+                    @Html.EditorFor(model => model.location, new { htmlAttributes = new { @class = "single-input", placeholder = "Location" } })
+                    @Html.ValidationMessageFor(model => model.location, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">              
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.durationOffer, new { htmlAttributes = new { @class = "single-input", placeholder = "Duration" } })
+                    @Html.ValidationMessageFor(model => model.durationOffer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">              
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.salary, new { htmlAttributes = new { @class = "single-input", placeholder = "Salary" } })
+                    @Html.ValidationMessageFor(model => model.salary, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.contractTypeOffer, new { htmlAttributes = new { @class = "single-input", placeholder = "Type" } })
+                    @Html.ValidationMessageFor(model => model.contractTypeOffer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-lg-8 col-md-8">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="genric-btn success" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+    
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>

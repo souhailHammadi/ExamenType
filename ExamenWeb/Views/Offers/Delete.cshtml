@@ -1,0 +1,74 @@
+﻿@model Domaine.Offer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Offer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+      
+        <dt>
+            @Html.DisplayNameFor(model => model.titleOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titleOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.referenceOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.referenceOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.durationOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.durationOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contractTypeOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contractTypeOffer)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,4 +1,5 @@
-﻿using Domaine;
+﻿using Domain.Entity;
+using Domaine;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,7 +15,7 @@ namespace Data
         {
         }
         public DbSet<Candidat> Candidat { get; set; }
-        public DbSet<Candidature> Candidature { get; set; }
+        public DbSet<Candidature> Candidature { get; set; }              
         public DbSet<Contacts> Contacts { get; set; }
         public DbSet<Entreprise> Entreprise { get; set; }
         public DbSet<subscribe> Subscribe { get; set; }
@@ -22,14 +23,18 @@ namespace Data
         public DbSet<Calendrier> Calendrier { get; set; }
         public DbSet<Chat> Chat { get; set; }
         public DbSet<Comment> Comment { get; set; }
+        public DbSet<Entretien> Entretien { get; set; }
         public DbSet<EntretienEnLigne> EntretienEnLigne { get; set; }
         public DbSet<EntretienPhysique> EntretienPhysique { get; set; }
         public DbSet<Post> Post { get; set; }
         public DbSet<Question> Question { get; set; }
         public DbSet<ReactComment> ReactComment { get; set; }
         public DbSet<ReactPost> ReactPost { get; set; }
-        public DbSet<Reponse> Reponse { get; set; }
-        public DbSet<Choix> Choix { get; set; }
+        public DbSet<Offer> Offers{ get; set; }
+        public DbSet<ProjectManager> ProjectsManagers{ get; set; }
+        public DbSet<RHmanager> RHmanagers{ get; set; }
+        public DbSet<AdminEntreprise> AdminsEntreprises{ get; set; }
+        public DbSet<Team> Teams { get; set; }
 
 
 
