@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using ExamenWeb.Models;
 using Data;
 using Domaine;
+using System.Net;
+using System.Data.Entity;
 
 namespace ExamenWeb.Controllers
 {
@@ -55,5 +57,43 @@ namespace ExamenWeb.Controllers
 
             return View(comment);
         }
+
+
+
+        // GET: Comment/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Comment comment = db.Comment.Find(id);
+            if (comment == null)
+            {
+                return HttpNotFound();
+            }
+            return View(comment);
+        }
+
+
+
+
+
+
+        // POST: Comment/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "CommentId,contenu,dateComment,UserId,PostId")] Comment comment)
+        {
+            if (ModelState.IsValid)
+            {
+                comment.UserId = 2;
+                db.Entry(comment).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index", new { PostId = comment.PostId });
+            }
+            return View(comment);
+        }
+
     }
 }

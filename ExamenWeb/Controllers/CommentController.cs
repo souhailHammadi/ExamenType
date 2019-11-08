@@ -95,6 +95,7 @@ namespace ExamenWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                comment.UserId = 2;
                 db.Entry(comment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

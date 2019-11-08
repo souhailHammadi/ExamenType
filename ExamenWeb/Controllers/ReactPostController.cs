@@ -52,6 +52,14 @@ namespace ExamenWeb.Controllers
             return test;
         }
 
+        public int TestD(int? UserId, int? PostId)
+        {
+            int test = db.ReactPost.Where(emp => emp.PostId == PostId).Where(emp => emp.UserId == UserId)
+               .Where(emp => emp.TypeReact == "like").ToList().Count();
+            return test;
+        }
+
+
         // GET: ReactPost/Create
         public ActionResult Create()
         {
@@ -107,6 +115,38 @@ namespace ExamenWeb.Controllers
         }
 
 
+        // GET: ReactPost/CreateDel
+        public ActionResult CreateDelD()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public int CreateDelD(int? PostId, int? UserId, String TypeReact, [Bind(Include = "PostId,typeReact,PostId,UserId")] ReactPost reactpost)
+        {
+
+            if (ModelState.IsValid)
+            {
+                reactpost.UserId = UserId;
+                reactpost.PostId = PostId;
+                reactpost.TypeReact = TypeReact;
+                db.ReactPost.Add(reactpost);
+                db.SaveChanges();
+
+
+
+
+            }
+            db.ReactPost.RemoveRange(db.ReactPost.Where(emp => emp.PostId == PostId).Where(emp => emp.TypeReact == "Like")
+              .Where(emp => emp.UserId == UserId));
+            db.SaveChanges();
+            return db.ReactPost.Where(emp => emp.PostId == PostId).Where(emp => emp.TypeReact == TypeReact).ToList().Count();
+        }
+
+
+
+
 
 
         // GET: ReactPost/Edit/5
@@ -134,20 +174,21 @@ namespace ExamenWeb.Controllers
         }
         */
         // GET: ReactPost/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? PostId, int? UserId, String TypeReact)
         {
             return View();
         }
 
         // POST: ReactPost/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+     
+        public int DeleteConfirmed(int? PostId, int? UserId, String TypeReact)
         {
-            ReactPost reactpost = db.ReactPost.Find(id);
-            db.ReactPost.Remove(reactpost);
+            db.ReactPost.RemoveRange(db.ReactPost.Where(emp => emp.PostId == PostId).Where(emp => emp.TypeReact == TypeReact)
+               .Where(emp => emp.UserId == UserId));
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return db.ReactPost.Where(emp => emp.PostId == PostId).Where(emp => emp.TypeReact == TypeReact).ToList().Count();
+
         }
     }
 }

@@ -33,5 +33,7 @@ namespace ExamenWeb.Models
         public System.Data.Entity.DbSet<Domaine.Candidature> Candidatures { get; set; }
 
         public System.Data.Entity.DbSet<Domaine.Post> Posts { get; set; }
+
+        public System.Data.Entity.DbSet<Domaine.Comment> Comments { get; set; }
     }
 }
